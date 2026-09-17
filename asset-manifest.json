@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "package": "ores-otel/ores-otel-assets",
+  "brandApproval": "pending",
+  "flutterLauncher": {
+    "source": "branding/app-logo.png",
+    "sha256": "2fe8a9872b5507066443b2abc9a237d02038935a1ae30dbdac769a51422a73f8"
+  },
+  "assets": [
+    {
+      "path": "branding/app-logo.png",
+      "role": "source",
+      "mediaType": "image/png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "2fe8a9872b5507066443b2abc9a237d02038935a1ae30dbdac769a51422a73f8"
+    },
+    {
+      "path": "exports/png/app-logo-16.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 16,
+      "height": 16,
+      "sha256": "7d833cde9da3ddcc13b5a9cdd41eaad7704a30be430692bf78c387bc708f8c4c"
+    },
+    {
+      "path": "exports/png/app-logo-32.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 32,
+      "height": 32,
+      "sha256": "2ce10d19cb2b48972eb0a8536a1bf5660f0335ea8eb08ad17c440fcdf1741725"
+    },
+    {
+      "path": "exports/png/app-logo-48.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 48,
+      "height": 48,
+      "sha256": "abc2a315d3b2c0fbeb73c50a6a76f2e6367efcc0e761ecb65c1b719104ec5a3b"
+    },
+    {
+      "path": "exports/png/app-logo-64.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 64,
+      "height": 64,
+      "sha256": "dad8fca1812e8e32440e1590436e0e9da86c20484e9f807b28b3a5d22f6c3d47"
+    },
+    {
+      "path": "exports/png/app-logo-128.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 128,
+      "height": 128,
+      "sha256": "28528b867eb16281e87d73d9a175f32b30979a3ffb9cffc709fbdfbfbada4cbb"
+    },
+    {
+      "path": "exports/png/app-logo-180.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 180,
+      "height": 180,
+      "sha256": "01d04871d70afaa870f1cb883d09652a57e0116ce77ee824fb9703bc441b3c0d"
+    },
+    {
+      "path": "exports/png/app-logo-192.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 192,
+      "height": 192,
+      "sha256": "1e236de697feb8f5e53b6b469d8d7fb0012d00ec0970dc39f587aeaa70f57be6"
+    },
+    {
+      "path": "exports/png/app-logo-256.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 256,
+      "height": 256,
+      "sha256": "75329e677c8d32483924cdc6505f4559aa8850430ff0e843882792257ff49d45"
+    },
+    {
+      "path": "exports/png/app-logo-512.png",
+      "role": "static-export",
+      "mediaType": "image/png",
+      "width": 512,
+      "height": 512,
+      "sha256": "604d7e702e6fe77aff58ec35f78ab4f9867724c60b977ee14076e58c6e687342"
+    }
+  ]
+}

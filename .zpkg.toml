@@ -1,0 +1,28 @@
+[package]
+org = "ores-otel"
+name = "ores-otel-assets"
+version = "0.1.0"
+description = "Versioned, integrity-bound ORES OpenTelemetry app branding and static/CDN exports"
+license = "LicenseRef-Proprietary"
+keywords = ["assets", "branding", "cdn", "logo"]
+language = "universal"
+
+[package.repository]
+vcs = "git"
+url = "https://github.com/ores-otel/ores-otel-assets"
+
+[publish]
+include_readme = true
+tag_format = "v{version}"
+smoke_test = "python3 scripts/validate.py"
+exclude = [".env", ".env.*", ".direnv/**", ".vendor/.zed/**", ".zed/**", ".zed-pack/**", "tmp/**", "temp/**", "**/*.log", ".DS_Store"]
+
+[install]
+dir = ".vendor/.zed"
+
+[targets.assets]
+dir = "."
+adapter = "none"
+
+[scripts]
+test = "python3 scripts/validate.py"
