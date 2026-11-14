@@ -20,8 +20,11 @@ for n in 16 32 48 64 128 180 192 256 512; do
   sips -s format png -z "$n" "$n" branding/app-logo.png --out "exports/png/app-logo-$n.png"
 done
 python3 scripts/validate.py --write   # refresh asset-manifest.json
-python3 scripts/validate.py           # fails on checksum/size drift or unlisted exports\npython3 -m unittest discover -s tests # malformed IHDR and checksum regression checks
+python3 scripts/validate.py           # fails on checksum/size drift or unlisted exports
+python3 -m unittest discover -s tests # malformed IHDR and checksum regression checks
 ```
 
-The validator additionally checks the PNG IHDR chunk length, CRC and bounded dimensions before trusting image metadata; it does not fully decode compressed image pixels.\n\nFlutter consumers (`ores-otel/ores-otel-flutter`) should compare the launcher
+The validator additionally checks the PNG IHDR chunk length, CRC and bounded dimensions before trusting image metadata; it does not fully decode compressed image pixels.
+
+Flutter consumers (`ores-otel/ores-otel-flutter`) should compare the launcher
 source they generated icons from against `flutterLauncher.sha256`.
