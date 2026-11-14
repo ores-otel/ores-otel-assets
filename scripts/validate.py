@@ -13,6 +13,7 @@ import hashlib
 import json
 import struct
 import sys
+import zlib
 from pathlib import Path
 
 PACKAGE = "ores-otel/ores-otel-assets"
@@ -26,10 +27,22 @@ manifest_path = root / "asset-manifest.json"
 
 
 def png_size(path: Path) -> tuple[int, int]:
-    header = path.read_bytes()[:24]
-    if len(header) < 24 or header[:8] != PNG_SIGNATURE or header[12:16] != b"IHDR":
-        raise AssertionError(f"{path.relative_to(root)} is not a PNG")
-    return struct.unpack(">II", header[16:24])
+    # Validate the complete, fixed-length IHDR including its CRC before trusting
+    # the uncompressed dimensions. This is a structural check, not a PNG decoder.
+    with path.open("rb") as stream:
+        header = stream.read(33)
+    if (
+        len(header) != 33
+        or header[:8] != PNG_SIGNATURE
+        or struct.unpack(">I", header[8:12])[0] != 13
+        or header[12:16] != b"IHDR"
+        or struct.unpack(">I", header[29:33])[0] != zlib.crc32(header[12:29])
+    ):
+        raise AssertionError(f"{path.relative_to(root)} has an invalid PNG IHDR")
+    width, height = struct.unpack(">II", header[16:24])
+    if not (0 < width <= 16384 and 0 < height <= 16384):
+        raise AssertionError(f"{path.relative_to(root)} has out-of-range dimensions")
+    return width, height
 
 
 def sha256(path: Path) -> str:
